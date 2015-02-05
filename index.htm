@@ -1,0 +1,79 @@
+<html>
+<head>
+	<title>Pokrivenost podlogama za RH i okolicu</title>
+	 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+	 <!--[if lte IE 8]>
+     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+ 	<![endif]-->
+ 	 <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+</head>
+<body>
+	<div id="map" class="map" style="height: 100%"></div>
+
+
+<script>
+
+	var cities = new L.LayerGroup();
+
+    var cmAttr = 'Map data &copy; 2013 OpenStreetMap contributors',
+    	cmAttrbing = 'Satellite imagery &copy; 2014 Microsoft Corporation',
+        cmAttrusgs = 'Orbview satellite imagery by USGS',
+		cmUrl1 = 'http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png';
+		cmUrl2 = 'http://tms.osm-hr.org/1.0.0/all_ustopo/{z}/{x}/{y}.png';
+		cmUrl3 = 'http://otile4.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png';
+		cmUrl4 = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+		cmUrl5 = 'http://tms.osm-hr.org/orbview/{z}/{x}/{y}.png';
+		cmUrl6 = 'http://ant.dev.openstreetmap.org/bingimageanalyzer/tile.php/{z}/{x}/{y}.png?returnaerial=1'
+		cmUrl7 = 'http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png';
+        cmUrl8 = 'http://tms.osm-hr.org/orbview-old/{z}/{x}/{y}.png';
+        cmUrl9 = 'http://tms.osm-hr.org/opc/{z}/{x}/{y}.png';
+        cmUrl10 = 'http://tms.osm-hr.org/opcg/{z}/{x}/{y}.png';
+
+
+    var cloudmade   = L.tileLayer(cmUrl1, {attribution: cmAttr,opacity:0.5}),
+    	cloudmadeb   = L.tileLayer(cmUrl1, {attribution: cmAttr}),
+	    ustopo  = L.tileLayer(cmUrl2, {attribution: cmAttr,opacity:0.9}),
+	    mapquest = L.tileLayer(cmUrl3, {attribution: cmAttr,opacity:0.5}),
+	    mapquestb = L.tileLayer(cmUrl3, {attribution: cmAttr}),
+	    osmb = L.tileLayer(cmUrl4, {attribution: cmAttr}),
+	    osm = L.tileLayer(cmUrl4, {attribution: cmAttr,opacity:0.5}),
+	    osmcycleb = L.tileLayer(cmUrl7, {attribution: cmAttr}),
+	    osmcycle = L.tileLayer(cmUrl7, {attribution: cmAttr,opacity:0.5}),
+	    orbview  = L.tileLayer(cmUrl5, {attribution: cmAttrusgs,opacity:0.9,tms:true}),
+        orbviewold  = L.tileLayer(cmUrl8, {attribution: cmAttrusgs,opacity:0.9,tms:true}),
+	    bingia  = L.tileLayer(cmUrl6, {attribution: cmAttrbing,opacity:0.7}),
+        opc  = L.tileLayer(cmUrl9, {attribution: cmAttr,opacity:0.9,tms:true}),
+        opcg  = L.tileLayer(cmUrl10, {attribution: cmAttr,opacity:0.9,tms:true});
+
+	var map = L.map('map', {
+		center: [44, 18],
+		zoom: 7,
+		layers: [mapquestb,orbview,ustopo]
+	});
+
+	var baseLayers = {
+		"OpenStreetMap": osmb,
+		"OpenCycleMap": osmcycleb,
+		"Cloudmade": cloudmadeb,
+		"Mapquest": mapquestb
+	};
+
+	var overlays = {
+		"OpenStreetMap": osm,
+		"OpenCycleMap": osmcycle,
+		"Cloudmade": cloudmade,
+		"Mapquest": mapquest,
+		"US topo": ustopo,
+		"Obview": orbview,
+        "Obview old": orbviewold,
+	    "ObviewPossibleCoverageGreen": opcg,
+        "ObviewPossibleCoverage": opc,
+		"BingImageAnalyzer": bingia
+	};
+
+	L.control.layers(baseLayers, overlays).addTo(map);
+
+</script>
+
+</body>
+</html>
