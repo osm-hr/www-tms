@@ -11,21 +11,21 @@
 
 	var cities = new L.LayerGroup();
 
-    var attosm = 'Map data &copy; OpenStreetMap contributors',
+	var attaosm = 'Map data &copy; OpenStreetMap contributors',
 		attocm = 'Map data &copy; OpenStreetMap contributors, tiless by OpenCycleMap',    
-        attorbview = 'Orbview satellite imagery by USGS',
-        attustopo = 'Topo maps by U.S. Defense Mapping Agency'
+		attorbview = 'Orbview satellite imagery by USGS',
+		attustopo = 'Topo maps by U.S. Defense Mapping Agency'
 		urlosm = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
 		urlocm = 'http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png',
 		urlorbview = 'http://tms.osm-hr.org/orbview/{z}/{x}/{y}.png',
 		urlustopo = 'http://tms.osm-hr.org/ustopo/{z}/{x}/{y}.png',
-        urlopc = 'http://tms.osm-hr.org/opc/{z}/{x}/{y}.png';
+		urlopc = 'http://tms.osm-hr.org/opc/{z}/{x}/{y}.png';
 
-    var osm = L.tileLayer(urlosm, {attribution: attosm}),
-	    ocm = L.tileLayer(urlocm, {attribution: attocm}),
-	    ustopo  = L.tileLayer(urlustopo, {attribution: attustopo,opacity:0.9}),
-	    orbview  = L.tileLayer(urlorbview, {attribution: attorbview,opacity:0.9,tms:true}),
-        opc  = L.tileLayer(urlopc, {opacity:0.9,tms:true});
+	var osm = L.tileLayer(urlosm, {attribution: attosm}),
+		ocm = L.tileLayer(urlocm, {attribution: attocm}),
+		ustopo  = L.tileLayer(urlustopo, {attribution: attustopo,opacity:0.9,tms:true}),
+		orbview  = L.tileLayer(urlorbview, {attribution: attorbview,opacity:0.9,tms:true}),
+		opc  = L.tileLayer(urlopc, {opacity:0.9,tms:true});
 
 	var map = L.map('map', {
 		center: [44, 18],
@@ -41,7 +41,7 @@
 	var overlays = {
 		"US topo": ustopo,
 		"Obview": orbview,
-        "Obview Possible Coverage": opc
+		"Obview Possible Coverage": opc
 	};
 
 	L.control.layers(baseLayers, overlays).addTo(map);
