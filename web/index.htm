@@ -1,8 +1,12 @@
 <html>
 <head>
 	<title>Pokrivenost podlogama za RH i okolicu</title>
-	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+		integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+		crossorigin=""/>
+	<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+		integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+		crossorigin=""></script>
 </head>
 <body>
 	<div id="map" class="map" style="height: 100%"></div>
@@ -12,11 +16,11 @@
 		attocm = 'Map data &copy; OpenStreetMap contributors, tiless by OpenCycleMap',
 		attorbview = 'Orbview satellite imagery by USGS',
 		attustopo = 'Topo maps by U.S. Defense Mapping Agency',
-		urlosm = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-		urlocm = 'http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png',
-		urlorbview = 'http://tms.osm-hr.org/orbview/{z}/{x}/{y}.png',
-		urlustopo = 'http://tms.osm-hr.org/ustopo/{z}/{x}/{y}.png',
-		urlopc = 'http://tms.osm-hr.org/opc/{z}/{x}/{y}.png';
+		urlosm = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+		urlocm = 'https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png',
+		urlorbview = 'https://tms.osm-hr.org/orbview/{z}/{x}/{y}.png',
+		urlustopo = 'https://tms.osm-hr.org/ustopo/{z}/{x}/{y}.png',
+		urlopc = 'https://tms.osm-hr.org/opc/{z}/{x}/{y}.png';
 
 	var osm = L.tileLayer(urlosm, {attribution: attosm}),
 		ocm = L.tileLayer(urlocm, {attribution: attocm}),
