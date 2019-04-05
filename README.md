@@ -1,5 +1,5 @@
 # www-tms
-http://tms.osm-hr.org/ web page
+https://tms.osm-hr.org/ web page
 
 U web folderu su tms arhive i osnovna karta za njihov pregled.
 
@@ -16,13 +16,13 @@ Source tag: "source=U.S. Defense Mapping Agency"
 U JOSMu
 Kliknuti na Edit > Preferences... > WMS TMS > + (Plus dolje desno) > TMS
 Menu name= U.S. Defense osm-hr
-TMS URL= http://tms.osm-hr.org/ustopo/{zoom}/{x}/{y}.png
+TMS URL= https://tms.osm-hr.org/ustopo/{zoom}/{x}/{y}.png
 
 U Potlatchu:
 Kliknuti na Background > Edit...
 I napraviti novi upis:
 Name= U.S. Defense osm-hr
-URL= http://tms.osm-hr.org/ustopo/$z/$x/$y.png
+URL= https://tms.osm-hr.org/ustopo/$z/$x/$y.png
 
 ##OrbView3
 
@@ -33,18 +33,18 @@ Source tag: "source=Orbview3"
 U JOSMu
 Kliknuti na Edit > Preferences... > WMS TMS > + (Plus dolje desno) > TMS
 Menu name= Orbview
-TMS URL= http://tms.osm-hr.org/orbview/{zoom}/{x}/{-y}.png
+TMS URL= https://tms.osm-hr.org/orbview/{zoom}/{x}/{-y}.png
 
 U Potlatchu:
 Kliknuti na Background > Edit...
 I napraviti novi upis:
 Name= Orbview
-URL= http://tms.osm-hr.org/orbview/$z/$x/$-y.png
+URL= https://tms.osm-hr.org/orbview/$z/$x/$-y.png
 
 U ID editoru:
 Kliknuti na postavke pozadine (kratica b)
 Kliknuti na Podesivo
-Upisati http://tms.osm-hr.org/orbview/{z}/{x}/{-y}.png
+Upisati https://tms.osm-hr.org/orbview/{z}/{x}/{-y}.png
 
 ##OPC
 
