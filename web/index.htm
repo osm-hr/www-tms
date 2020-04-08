@@ -28,9 +28,9 @@
 	var osm = L.tileLayer(urlosm, {attribution: attosm}),
 		ustopo  = L.tileLayer(urlustopo, {attribution: attustopo, opacity:0.9}),
 		orbview  = L.tileLayer(urlorbview, {attribution: attorbview, opacity:0.9,tms:true}),
-		knin2007  = L.tileLayer(urlknin2007, {attribution: attknin2007, opacity:0.9,tms:true}),
-		zagreb2012  = L.tileLayer(urlzagreb2012, {attribution: attzagreb2012, opacity:0.9,tms:true});
-		zagreb2018  = L.tileLayer(urlzagreb2018, {attribution: attzagreb2018, opacity:0.9,tms:true});
+		knin2007  = L.tileLayer(urlknin2007, {attribution: attknin2007, opacity:0.9, tms:true, maxZoom:20}),
+		zagreb2012  = L.tileLayer(urlzagreb2012, {attribution: attzagreb2012, opacity:0.9, tms:true, maxZoom:20}),
+		zagreb2018  = L.tileLayer(urlzagreb2018, {attribution: attzagreb2018, opacity:0.9, tms:true, maxZoom:20});
 
 	var map = L.map('map', {
 		center: [44, 18],
