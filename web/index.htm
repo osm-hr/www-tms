@@ -21,24 +21,31 @@
 		attknin2007 = 'DOF by Grad Knin 2007',
 		attzagreb2012 = 'DOF by Grad Zagreb 2012',
 		attzagreb2018 = 'DOF by Grad Zagreb 2018',
+		attzagrebbuildings = 'Buildings by Grad Zagreb 2018',
+		attzagreblanduse = 'Landuse by Grad Zagreb 2018',
 		urlosm = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
 		urlorbview = 'https://tms.osm-hr.org/orbview/{z}/{x}/{y}.png',
 		urlustopo = 'https://tms.osm-hr.org/ustopo/{z}/{x}/{y}.png',
 		urlknin2007 = 'https://tms.osm-hr.org/knin-2007/{z}/{x}/{-y}.png',
-		urlzagreb2012 = 'https://tms.osm-hr.org/zagreb-2012/{z}/{x}/{-y}.png';
-		urlzagreb2018 = 'https://tms.osm-hr.org/zagreb-2018/{z}/{x}/{-y}.png';
+		urlzagreb2012 = 'https://tms.osm-hr.org/zagreb-2012/{z}/{x}/{-y}.png',
+		urlzagreb2018 = 'https://tms.osm-hr.org/zagreb-2018/{z}/{x}/{-y}.png',
+		urlzagrebbuildings = 'https://tms.osm-hr.org/zagreb-buildings/{z}/{x}/{-y}.png',
+		urlzagreblanduse = 'https://tms.osm-hr.org/zagreb-landuse/{z}/{x}/{-y}.png';
 
 	var osm = L.tileLayer(urlosm, {attribution: attosm}),
 		ustopo  = L.tileLayer(urlustopo, {attribution: attustopo, opacity:0.9}),
 		orbview  = L.tileLayer(urlorbview, {attribution: attorbview, opacity:0.9,tms:true}),
-		knin2007  = L.tileLayer(urlknin2007, {attribution: attknin2007, opacity:0.9, tms:true, maxZoom:20}),
-		zagreb2012  = L.tileLayer(urlzagreb2012, {attribution: attzagreb2012, opacity:0.9, tms:true, maxZoom:20}),
-		zagreb2018  = L.tileLayer(urlzagreb2018, {attribution: attzagreb2018, opacity:0.9, tms:true, maxZoom:20});
+		knin2007  = L.tileLayer(urlknin2007, {attribution: attknin2007, opacity:0.9,tms:true, maxZoom:20}),
+		zagreb2012  = L.tileLayer(urlzagreb2012, {attribution: attzagreb2012, opacity:0.9,tms:true, maxZoom:20}),
+		zagreb2018  = L.tileLayer(urlzagreb2018, {attribution: attzagreb2018, opacity:0.9,tms:true, maxZoom:20}),
+                zagrebbuildings  = L.tileLayer(urlzagrebbuildings, {attribution: attzagrebbuildings, opacity:0.9,tms:true, maxZoom:21}),
+                zagreblanduse  = L.tileLayer(urlzagreblanduse, {attribution: attzagreblanduse, opacity:0.9,tms:true, maxZoom:21});
+
 
 	var map = L.map('map', {
 		center: [44, 18],
 		zoom: 7,
-		layers: [osm,orbview,ustopo,knin2007,zagreb2012,zagreb2018]
+		layers: [osm,orbview,ustopo,knin2007,zagreb2012,zagreb2018,zagreblanduse,zagrebbuildings]
 	});
 
 	var baseLayers = {
@@ -50,11 +57,15 @@
 		"Obview": orbview,
 		"Knin 2007": knin2007,
 		"Zagreb 2012": zagreb2012,
-		"Zagreb 2018": zagreb2018
+		"Zagreb 2018": zagreb2018,
+		"Zagreb landuse": zagreblanduse,
+		"Zagreb buildings": zagrebbuildings
 	};
 
 	L.control.layers(baseLayers, overlays).addTo(map);
+
 	var hash = new L.Hash(map);
+
 </script>
 
 </body>
